@@ -16,7 +16,7 @@ docker build -t kv-store .
 ### After building the image, run the container with the following command:
 ```bash
 
-docker run -p 8080:8080 -p 8000:8000 kv-store-prometheus
+docker run -p 8080:8080 -p 8000:8000 kv-store
 ```
 
 Port 8080 will be used for your key-value store API.
