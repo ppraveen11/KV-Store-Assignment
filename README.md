@@ -40,9 +40,11 @@ You should see Prometheus metrics like request latency, status codes, and the to
 ![image](https://github.com/user-attachments/assets/e6b22707-5a28-4766-b6a4-13aaf649db55)
 
 # Deployement on kubernetes
+Before make ensure the the image has pushed to the docker hub repository
 ```bash
-kubectl apply -f your-deployment.yaml
-kubectl apply -f your-service.yaml
+kubectl apply -f  deployment.yaml
+kubectl apply -f  service.yaml
+Kubectl apply -f  ingress.yaml
 ```
 #### Use Port Forwarding for Testing
 ```bash
