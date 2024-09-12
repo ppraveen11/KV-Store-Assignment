@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kv-store
+spec:
+  replicas: 3  # Zero downtime ensured by multiple replicas
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: kv-store
+  template:
+    metadata:
+      labels:
+        app: kv-store
+    spec:
+      containers:
+      - name: kv-store
+        image: ppraveen11/cloudraft:latest
+        ports:
+        - containerPort: 8080
+        - containerPort: 8000
+
+
