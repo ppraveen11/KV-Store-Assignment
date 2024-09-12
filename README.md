@@ -46,7 +46,8 @@ You should see Prometheus metrics like request latency, status codes, and the to
 ![image](https://github.com/user-attachments/assets/e6b22707-5a28-4766-b6a4-13aaf649db55)
 
 # Deployement on kubernetes
-Before make ensure the the image has pushed to the docker hub repository
+Before make ensure the the image has pushed to the docker hub repository before going deploy on kubernetes
+
 ```bash
 kubectl apply -f  deployment.yaml
 kubectl apply -f  service.yaml
@@ -54,7 +55,7 @@ Kubectl apply -f  ingress.yaml
 ```
 #### Use Port Forwarding for Testing
 ```bash
-kubectl port-forward your-pod-name 80:8080 8000:8000 
+kubectl port-forward service/kv-store 8080:80  8000:8000
 ```
 #### Set a key:
  ```bash
