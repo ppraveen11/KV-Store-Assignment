@@ -85,11 +85,11 @@ curl http://localhost:8000/metrics
 ### Testing
 Before releasing to production, perform the following tests:
 
-Unit Tests: Ensure that individual components work as expected.
-Integration Tests: Verify the integration of different parts of the system.
-Load Testing: Test how the system performs under load.
-End-to-End Testing: Validate the entire workflow from setting keys to querying metrics.
-Security Testing: Check for vulnerabilities and ensure secure access to the service.
+1. Unit Tests: Ensure that individual components work as expected.
+2. Integration Tests: Verify the integration of different parts of the system.
+3. Load Testing: Test how the system performs under load.
+4. End-to-End Testing: Validate the entire workflow from setting keys to querying metrics.
+5. Security Testing: Check for vulnerabilities and ensure secure access to the service.
 
 
 
