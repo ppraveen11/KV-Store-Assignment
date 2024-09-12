@@ -20,9 +20,7 @@ docker run -p 8080:8080 -p 8000:8000 kv-store-prometheus
 Port 8080 will be used for your key-value store API.
 Port 8000 will be used for Prometheus metrics
 
-### Verify the Service:
-
-To interact with the key-value store, use http://localhost:8080:
+### Verify the APIs
 
 #### Set a key:
  ```bash
@@ -37,6 +35,7 @@ curl http://localhost:8080/get/abc-1
 curl http://localhost:8000/metrics
 ```
 You should see Prometheus metrics like request latency, status codes, and the total number of keys in the response.
+
 ![image](https://github.com/user-attachments/assets/e6b22707-5a28-4766-b6a4-13aaf649db55)
 
 # Deployement on kubernetes
