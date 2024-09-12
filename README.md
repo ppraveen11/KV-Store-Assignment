@@ -9,15 +9,14 @@ This repository contains a simple key-value store implemented in Python. The ser
 - Docker
 - Kubernetes (for deployment)
 
-Build the Docker image:
-
+**Build the Docker image:
+```bash
 docker build -t kv-store .
-
-Run the container:
-
-After building the image, run the container with the following command:
-
+```
+**After building the image, run the container with the following command:
+```bash
 docker run -p 8080:8080 -p 8000:8000 kv-store-prometheus
+```
 Port 8080 will be used for your key-value store API.
 Port 8000 will be used for Prometheus metrics
 
