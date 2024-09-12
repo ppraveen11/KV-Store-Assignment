@@ -70,6 +70,19 @@ curl -X POST -H "Content-Type: application/json" -d '{"key": "abc-1", "value": "
 ```bash
 curl http://localhost:8080/get/abc-1
 ```
+
+### Search for keys with a prefix
+
+```bash
+curl "http://localhost:8080/search?prefix=abc"
+```
+
+### Search for keys with a suffix:
+
+```bash
+curl "http://localhost:8080/search?suffix=-1"
+```
+
 ### Then access the metrics endpoint:
 
 ```bash
