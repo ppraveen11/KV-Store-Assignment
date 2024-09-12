@@ -76,6 +76,24 @@ curl http://localhost:8080/get/abc-1
 curl http://localhost:8000/metrics
 ```
 
+###To implement observability:
+
+1. Prometheus: Scrape the /metrics endpoint to collect metrics.
+2. Grafana: Create dashboards to visualize metrics such as request latency, HTTP status codes, and key counts.
+3. Alerting: Set up alerts in Prometheus for high latency or error rates.
+
+###Testing
+Before releasing to production, perform the following tests:
+
+Unit Tests: Ensure that individual components work as expected.
+Integration Tests: Verify the integration of different parts of the system.
+Load Testing: Test how the system performs under load.
+End-to-End Testing: Validate the entire workflow from setting keys to querying metrics.
+Security Testing: Check for vulnerabilities and ensure secure access to the service.
+
+
+
+
 
 
 
