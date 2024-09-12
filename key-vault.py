@@ -9,7 +9,6 @@ REQUEST_LATENCY = Histogram('http_request_latency_seconds', 'Latency of HTTP req
 REQUEST_COUNT = Counter('http_requests_total', 'Total HTTP Requests', ['endpoint', 'status_code'])
 TOTAL_KEYS = Counter('total_keys', 'Total number of keys in the store')
 
-# In-memory key-value store
 store = {}
 
 class SimpleKVStore(BaseHTTPRequestHandler):
@@ -18,7 +17,6 @@ class SimpleKVStore(BaseHTTPRequestHandler):
         parsed_path = urllib.parse.urlparse(self.path)
         path_parts = parsed_path.path.split('/')
         
-        # /get/<key> implementation
         if path_parts[1] == 'get':
             key = path_parts[2]
             if key in store:
@@ -32,14 +30,13 @@ class SimpleKVStore(BaseHTTPRequestHandler):
                 self.wfile.write(json.dumps({"error": "Key not found"}).encode())
                 REQUEST_COUNT.labels(endpoint='/get', status_code='404').inc()
         
-        # /search?prefix=abc or /search?suffix=-1
         elif path_parts[1] == 'search':
             query_params = urllib.parse.parse_qs(parsed_path.query)
             prefix = query_params.get('prefix', [None])[0]
             suffix = query_params.get('suffix', [None])[0]
             result = []
 
-            # Search keys by prefix or suffix
+            
             for key in store:
                 if prefix and key.startswith(prefix):
                     result.append(key)
