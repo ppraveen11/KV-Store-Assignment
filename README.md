@@ -39,7 +39,7 @@ curl http://localhost:8000/metrics
 You should see Prometheus metrics like request latency, status codes, and the total number of keys in the response.
 ![image](https://github.com/user-attachments/assets/e6b22707-5a28-4766-b6a4-13aaf649db55)
 
-### Deployement on kubernetes
+# Deployement on kubernetes
 ```bash
 kubectl apply -f your-deployment.yaml
 kubectl apply -f your-service.yaml
