@@ -8,3 +8,10 @@ This repository contains a simple key-value store implemented in Python. The ser
 
 - Docker
 - Kubernetes (for deployment)
+
+### Building the Docker Image
+
+  . Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/kv-store.git
+   cd kv-store
