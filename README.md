@@ -20,19 +20,19 @@ docker run -p 8080:8080 -p 8000:8000 kv-store-prometheus
 Port 8080 will be used for your key-value store API.
 Port 8000 will be used for Prometheus metrics
 
-# Verify the Service:
+### Verify the Service:
 
 To interact with the key-value store, use http://localhost:8080:
 
-# Set a key:
+#### Set a key:
  ```bash
 curl -X POST -H "Content-Type: application/json" -d '{"key": "abc-1", "value": "123"}' http://localhost:8080/set
  ```
-# Get a key:
+#### Get a key:
 ```bash
 curl http://localhost:8080/get/abc-1
 ```
-# To access the Prometheus metrics, visit http://localhost:8000/metrics 
+### To access the Prometheus metrics, visit http://localhost:8000/metrics 
 ```bash
 curl http://localhost:8000/metrics
 ```
@@ -44,19 +44,19 @@ You should see Prometheus metrics like request latency, status codes, and the to
 kubectl apply -f your-deployment.yaml
 kubectl apply -f your-service.yaml
 ```
-# Use Port Forwarding for Testing
+#### Use Port Forwarding for Testing
 ```bash
 kubectl port-forward your-pod-name 80:8080 8000:8000 
 ```
-# Set a key:
+#### Set a key:
  ```bash
 curl -X POST -H "Content-Type: application/json" -d '{"key": "abc-1", "value": "123"}' http://localhost:8080/set
  ```
-# Get a key:
+#### Get a key:
 ```bash
 curl http://localhost:8080/get/abc-1
 ```
-# Then access the metrics endpoint:
+### Then access the metrics endpoint:
 
 ```bash
 curl http://localhost:8000/metrics
